@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ajnel\\Desktop\\Download Renamer Project\\Download Renamer\\Download Renamer.csproj": {}
+    "C:\\Users\\Johan\\Documents\\_GitHub_Repos\\DownloadRenamer\\DownloadRenamer\\Download Renamer\\Download Renamer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ajnel\\Desktop\\Download Renamer Project\\Download Renamer\\Download Renamer.csproj": {
+    "C:\\Users\\Johan\\Documents\\_GitHub_Repos\\DownloadRenamer\\DownloadRenamer\\Download Renamer\\Download Renamer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ajnel\\Desktop\\Download Renamer Project\\Download Renamer\\Download Renamer.csproj",
+        "projectUniqueName": "C:\\Users\\Johan\\Documents\\_GitHub_Repos\\DownloadRenamer\\DownloadRenamer\\Download Renamer\\Download Renamer.csproj",
         "projectName": "Download Renamer",
-        "projectPath": "C:\\Users\\ajnel\\Desktop\\Download Renamer Project\\Download Renamer\\Download Renamer.csproj",
-        "packagesPath": "C:\\Users\\ajnel\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ajnel\\Desktop\\Download Renamer Project\\Download Renamer\\obj\\",
+        "projectPath": "C:\\Users\\Johan\\Documents\\_GitHub_Repos\\DownloadRenamer\\DownloadRenamer\\Download Renamer\\Download Renamer.csproj",
+        "packagesPath": "C:\\Users\\Johan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Johan\\Documents\\_GitHub_Repos\\DownloadRenamer\\DownloadRenamer\\Download Renamer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\ajnel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Johan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

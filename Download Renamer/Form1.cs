@@ -1,18 +1,21 @@
+#region Using Statements
 using System;
 using System.Timers;
 using System.IO;
 using System.Threading;
+#endregion
 
 namespace Download_Renamer
 {
     public partial class Form1 : Form
     {
         #region Variables
-            public string folderPath = string.Empty;
-            public string extention = string.Empty;
-            public int seasonValue = 0;
+        public string folderPath = string.Empty;
+        public string extention = string.Empty;
+        public int seasonValue = 0;
         #endregion
 
+        #region Initialize Component
         public Form1()
         {
             InitializeComponent();
@@ -32,7 +35,9 @@ namespace Download_Renamer
                 numericUpDown1.Enabled = true;
             }
         }
+        #endregion
 
+        #region Directory Button
         private void button1_Click(object sender, EventArgs e)
         {
             if (folderPath != String.Empty)
@@ -47,7 +52,9 @@ namespace Download_Renamer
                 folderPath = folderBrowserDialog.SelectedPath;
             }
         }
+        #endregion
 
+        #region Build Button
         private void button2_Click(object sender, EventArgs e)
         {
             seasonValue = (int)numericUpDown1.Value;
@@ -59,9 +66,9 @@ namespace Download_Renamer
             {
                 extention = Path.GetExtension(infos[i].Extension);
 
-                if (seasonValue < 10)
+                if (seasonValue < 9)
                 {
-                    if (i < 10)
+                    if (i < 9)
                     {
                         string temp = "S0" + seasonValue.ToString() + "E0" + (i + 1) + extention;
                         File.Move(infos[i].FullName, infos[i].FullName.Replace(infos[i].Name, temp));
@@ -74,12 +81,12 @@ namespace Download_Renamer
                 }
                 else
                 {
-                    if (i < 10)
+                    if (i < 9)
                     {
                        string temp = "S" + seasonValue.ToString() + "E0" + (i + 1) + extention;
                        File.Move(infos[i].FullName, infos[i].FullName.Replace(infos[i].Name, temp));
                     }
-                    else if(i >= 10 && i < 20)
+                    else
                     {
                         string temp = "S" + seasonValue.ToString() + "E" + (i + 1) + extention;
                         File.Move(infos[i].FullName, infos[i].FullName.Replace(infos[i].Name, temp));
@@ -87,7 +94,9 @@ namespace Download_Renamer
                 }
             }
         }
+        #endregion
 
+        #region Numeric Up Down
         private void numericUpDown1_ValueChanged(object sender, EventArgs e)
         {
             seasonValue = (int)numericUpDown1.Value;
@@ -97,7 +106,9 @@ namespace Download_Renamer
                 button2.Enabled = true;
             }
         }
+        #endregion
 
+        #region Update Timer
         void timer_Tick(object sender, EventArgs e)
         {
             seasonValue = (int)numericUpDown1.Value;
@@ -121,5 +132,6 @@ namespace Download_Renamer
                 button2.Enabled = true;
             }
         }
+        #endregion
     }
 }
