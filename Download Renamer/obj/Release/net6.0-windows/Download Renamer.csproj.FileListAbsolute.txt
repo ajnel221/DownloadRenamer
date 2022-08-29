@@ -1,0 +1,19 @@
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\bin\Release\net6.0-windows\Download Renamer.exe
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\bin\Release\net6.0-windows\Download Renamer.deps.json
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\bin\Release\net6.0-windows\Download Renamer.runtimeconfig.json
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\bin\Release\net6.0-windows\Download Renamer.dll
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\bin\Release\net6.0-windows\Download Renamer.pdb
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.csproj.AssemblyReference.cache
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download_Renamer.Form1.resources
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download_Renamer.Properties.Resources.resources
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.csproj.GenerateResource.cache
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.AssemblyInfoInputs.cache
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.AssemblyInfo.cs
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.csproj.CoreCompileInputs.cache
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.csproj.Fody.CopyLocal.cache
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.dll
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\refint\Download Renamer.dll
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.pdb
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\Download Renamer.genruntimeconfig.cache
+C:\Users\ajnel\Desktop\Download Renamer Project\Download Renamer\obj\Release\net6.0-windows\ref\Download Renamer.dll
