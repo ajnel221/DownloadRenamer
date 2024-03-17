@@ -28,76 +28,153 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.SuspendLayout();
+            selectDirBtn = new Button();
+            runBtn = new Button();
+            seasonValueInput = new NumericUpDown();
+            fromRangeInput = new NumericUpDown();
+            label2 = new Label();
+            rangeSettingsGB = new GroupBox();
+            initialSettingsGB = new GroupBox();
+            createDirectoryCheckBox = new CheckBox();
+            directoryGB = new GroupBox();
+            toolTip1 = new ToolTip(components);
+            ((System.ComponentModel.ISupportInitialize)seasonValueInput).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)fromRangeInput).BeginInit();
+            rangeSettingsGB.SuspendLayout();
+            initialSettingsGB.SuspendLayout();
+            directoryGB.SuspendLayout();
+            SuspendLayout();
             // 
-            // button1
+            // selectDirBtn
             // 
-            this.button1.Image = global::Download_Renamer.Properties.Resources.FolderIcon;
-            this.button1.Location = new System.Drawing.Point(345, 43);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(96, 90);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            selectDirBtn.BackgroundImage = Properties.Resources.FolderIcon;
+            selectDirBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            selectDirBtn.Location = new Point(12, 160);
+            selectDirBtn.Name = "selectDirBtn";
+            selectDirBtn.Size = new Size(90, 90);
+            selectDirBtn.TabIndex = 0;
+            toolTip1.SetToolTip(selectDirBtn, "Select The Directory In Which You'd Like To Rename Your Files");
+            selectDirBtn.UseVisualStyleBackColor = true;
+            selectDirBtn.Click += selectDirBtn_Click;
             // 
-            // label1
+            // runBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(345, 198);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Enter Season Value";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            runBtn.BackgroundImage = Properties.Resources.RunIcon;
+            runBtn.BackgroundImageLayout = ImageLayout.Stretch;
+            runBtn.Location = new Point(702, 160);
+            runBtn.Name = "runBtn";
+            runBtn.Size = new Size(90, 90);
+            runBtn.TabIndex = 3;
+            toolTip1.SetToolTip(runBtn, "Start Renaming All Of The Files In The Given Directory");
+            runBtn.UseVisualStyleBackColor = true;
+            runBtn.Click += runBtn_Click;
             // 
-            // button2
+            // seasonValueInput
             // 
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(350, 326);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 105);
-            this.button2.TabIndex = 3;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            seasonValueInput.Location = new Point(28, 36);
+            seasonValueInput.Name = "seasonValueInput";
+            seasonValueInput.Size = new Size(105, 23);
+            seasonValueInput.TabIndex = 4;
+            toolTip1.SetToolTip(seasonValueInput, "Specify The Season Value");
+            seasonValueInput.ValueChanged += seasonValueInput_ValueChanged;
             // 
-            // numericUpDown1
+            // fromRangeInput
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(345, 227);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(105, 23);
-            this.numericUpDown1.TabIndex = 4;
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
+            fromRangeInput.Location = new Point(50, 37);
+            fromRangeInput.Name = "fromRangeInput";
+            fromRangeInput.Size = new Size(55, 23);
+            fromRangeInput.TabIndex = 6;
+            toolTip1.SetToolTip(fromRangeInput, "Specify The First Episode Value Here, Leave At 0 For Default");
+            fromRangeInput.ValueChanged += fromRangeInput_ValueChanged;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(6, 39);
+            label2.Name = "label2";
+            label2.Size = new Size(38, 15);
+            label2.TabIndex = 8;
+            label2.Text = "From:";
+            // 
+            // rangeSettingsGB
+            // 
+            rangeSettingsGB.Controls.Add(label2);
+            rangeSettingsGB.Controls.Add(fromRangeInput);
+            rangeSettingsGB.Location = new Point(429, 160);
+            rangeSettingsGB.Name = "rangeSettingsGB";
+            rangeSettingsGB.Size = new Size(121, 90);
+            rangeSettingsGB.TabIndex = 10;
+            rangeSettingsGB.TabStop = false;
+            rangeSettingsGB.Text = "Range Settings";
+            // 
+            // initialSettingsGB
+            // 
+            initialSettingsGB.Controls.Add(seasonValueInput);
+            initialSettingsGB.Location = new Point(108, 160);
+            initialSettingsGB.Name = "initialSettingsGB";
+            initialSettingsGB.Size = new Size(162, 90);
+            initialSettingsGB.TabIndex = 11;
+            initialSettingsGB.TabStop = false;
+            initialSettingsGB.Text = "Enter Season Value";
+            // 
+            // createDirectoryCheckBox
+            // 
+            createDirectoryCheckBox.AutoSize = true;
+            createDirectoryCheckBox.Location = new Point(20, 37);
+            createDirectoryCheckBox.Name = "createDirectoryCheckBox";
+            createDirectoryCheckBox.Size = new Size(111, 19);
+            createDirectoryCheckBox.TabIndex = 12;
+            createDirectoryCheckBox.Text = "Create Directory";
+            toolTip1.SetToolTip(createDirectoryCheckBox, "Creates a Directory Based On The Specified Season Value Like: \"Season \" + Value");
+            createDirectoryCheckBox.UseVisualStyleBackColor = true;
+            // 
+            // directoryGB
+            // 
+            directoryGB.Controls.Add(createDirectoryCheckBox);
+            directoryGB.Location = new Point(276, 160);
+            directoryGB.Name = "directoryGB";
+            directoryGB.Size = new Size(147, 90);
+            directoryGB.TabIndex = 13;
+            directoryGB.TabStop = false;
+            directoryGB.Text = "Directory Settings";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
-            this.ClientSize = new System.Drawing.Size(804, 481);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
-            this.Text = "Download Renamer";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.DodgerBlue;
+            ClientSize = new Size(804, 481);
+            Controls.Add(directoryGB);
+            Controls.Add(initialSettingsGB);
+            Controls.Add(rangeSettingsGB);
+            Controls.Add(runBtn);
+            Controls.Add(selectDirBtn);
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "Form1";
+            Text = "Download Renamer";
+            ((System.ComponentModel.ISupportInitialize)seasonValueInput).EndInit();
+            ((System.ComponentModel.ISupportInitialize)fromRangeInput).EndInit();
+            rangeSettingsGB.ResumeLayout(false);
+            rangeSettingsGB.PerformLayout();
+            initialSettingsGB.ResumeLayout(false);
+            directoryGB.ResumeLayout(false);
+            directoryGB.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private Button button1;
-        private Label label1;
-        private Button button2;
-        private NumericUpDown numericUpDown1;
+        private Button selectDirBtn;
+        private Button runBtn;
+        private NumericUpDown seasonValueInput;
+        private NumericUpDown fromRangeInput;
+        private Label label2;
+        private GroupBox rangeSettingsGB;
+        private GroupBox initialSettingsGB;
+        private CheckBox createDirectoryCheckBox;
+        private GroupBox directoryGB;
+        private ToolTip toolTip1;
     }
 }

@@ -11,8 +11,8 @@ namespace Download_Renamer
     {
         #region Variables
         public string folderPath = string.Empty;
-        public string extention = string.Empty;
         public int seasonValue = 0;
+        public int fromEpisode = 0;
         #endregion
 
         #region Initialize Component
@@ -27,22 +27,22 @@ namespace Download_Renamer
 
             if (folderPath == String.Empty)
             {
-                button2.Enabled = false;
-                numericUpDown1.Enabled = false;
+                runBtn.Enabled = false;
+                seasonValueInput.Enabled = false;
             }
             else
             {
-                numericUpDown1.Enabled = true;
+                seasonValueInput.Enabled = true;
             }
         }
         #endregion
 
         #region Directory Button
-        private void button1_Click(object sender, EventArgs e)
+        private void selectDirBtn_Click(object sender, EventArgs e)
         {
             if (folderPath != String.Empty)
             {
-                numericUpDown1.Enabled = true;
+                seasonValueInput.Enabled = true;
             }
 
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
@@ -55,55 +55,70 @@ namespace Download_Renamer
         #endregion
 
         #region Build Button
-        private void button2_Click(object sender, EventArgs e)
+        private void runBtn_Click(object sender, EventArgs e)
         {
-            seasonValue = (int)numericUpDown1.Value;
+            seasonValue = (int)seasonValueInput.Value;
 
-            DirectoryInfo d = new DirectoryInfo(folderPath);
-            FileInfo[] infos = d.GetFiles();
+            DirectoryInfo directoryInfo = new DirectoryInfo(folderPath);
+            FileInfo[] fileInfo = directoryInfo.GetFiles();
 
-            for (int i = 0; i < infos.Length; i++)
+            if (createDirectoryCheckBox.Checked)
             {
-                extention = Path.GetExtension(infos[i].Extension);
+                string newFolderName = $"Season {seasonValue}";
+                string newDirectoryPath = Path.Combine(folderPath, newFolderName);
+                Directory.CreateDirectory(newDirectoryPath);
 
-                if (seasonValue < 9)
+                for (int i = 0; i < fileInfo.Length; i++)
                 {
-                    if (i < 9)
+                    string extension = Path.GetExtension(fileInfo[i].FullName);
+
+                    int episodeNumber = fromEpisode + i;
+                    string episodeNumberFormatted = (episodeNumber < 10) ? "0" + episodeNumber : episodeNumber.ToString();
+                    string newFileName = $"S{seasonValue.ToString("D2")}E{episodeNumberFormatted}{extension}";
+
+                    string newFilePath = Path.Combine(newDirectoryPath, newFileName);
+
+                    File.Move(fileInfo[i].FullName, newFilePath);
+                }
+
+                MessageBox.Show("Finished Renaming All Your Files!");
+            }
+            else
+            {
+                for (int i = 0; i < fileInfo.Length; i++)
+                {
+                    string extension = Path.GetExtension(fileInfo[i].FullName);
+
+                    int episodeNumber = fromEpisode + i;
+                    string episodeNumberFormatted = (episodeNumber < 10) ? "0" + episodeNumber : episodeNumber.ToString();
+                    string newFileName = $"S{seasonValue.ToString("D2")}E{episodeNumberFormatted}{extension}";
+
+                    string newFilePath = Path.Combine(fileInfo[i].DirectoryName, newFileName);
+
+                    try
                     {
-                        string temp = "S0" + seasonValue.ToString() + "E0" + (i + 1) + extention;
-                        File.Move(infos[i].FullName, infos[i].FullName.Replace(infos[i].Name, temp));
+                        File.Move(fileInfo[i].FullName, newFilePath);
                     }
-                    else
+                    catch
                     {
-                        string temp = "S0" + seasonValue.ToString() + "E" + (i + 1) + extention;
-                        File.Move(infos[i].FullName, infos[i].FullName.Replace(infos[i].Name, temp));
+                        MessageBox.Show("Name Already Exists, File Will Be Skipped!");
+                        break;
                     }
                 }
-                else
-                {
-                    if (i < 9)
-                    {
-                       string temp = "S" + seasonValue.ToString() + "E0" + (i + 1) + extention;
-                       File.Move(infos[i].FullName, infos[i].FullName.Replace(infos[i].Name, temp));
-                    }
-                    else
-                    {
-                        string temp = "S" + seasonValue.ToString() + "E" + (i + 1) + extention;
-                        File.Move(infos[i].FullName, infos[i].FullName.Replace(infos[i].Name, temp));
-                    }
-                }
+
+                MessageBox.Show("Finished Renaming All Your Files!");
             }
         }
         #endregion
 
         #region Numeric Up Down
-        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        private void seasonValueInput_ValueChanged(object sender, EventArgs e)
         {
-            seasonValue = (int)numericUpDown1.Value;
+            seasonValue = (int)seasonValueInput.Value;
 
-            if ((int)numericUpDown1.Value < 1)
+            if ((int)seasonValueInput.Value < 1)
             {
-                button2.Enabled = true;
+                runBtn.Enabled = true;
             }
         }
         #endregion
@@ -111,27 +126,43 @@ namespace Download_Renamer
         #region Update Timer
         void timer_Tick(object sender, EventArgs e)
         {
-            seasonValue = (int)numericUpDown1.Value;
-            
+            seasonValue = (int)seasonValueInput.Value;
+
             if (folderPath == String.Empty)
             {
-                button2.Enabled = false;
-                numericUpDown1.Enabled = false;
+                runBtn.Enabled = false;
+                seasonValueInput.Enabled = false;
+                createDirectoryCheckBox.Enabled = false;
+                fromRangeInput.Enabled = false;
             }
             else
             {
-                numericUpDown1.Enabled = true;
+                seasonValueInput.Enabled = true;
             }
 
-            if (numericUpDown1.Value == 0)
+            if (seasonValueInput.Value == 0)
             {
-                button2.Enabled = false;
+                runBtn.Enabled = false;
+                createDirectoryCheckBox.Enabled = false;
+                fromRangeInput.Enabled = false;
             }
             else
             {
-                button2.Enabled = true;
+                runBtn.Enabled = true;
+                createDirectoryCheckBox.Enabled = true;
+                fromRangeInput.Enabled = true;
             }
         }
         #endregion
+
+        private void fromRangeInput_ValueChanged(object sender, EventArgs e)
+        {
+            fromEpisode = (int)fromRangeInput.Value;
+
+            if ((int)fromRangeInput.Value < 1)
+            {
+                runBtn.Enabled = true;
+            }
+        }
     }
 }
