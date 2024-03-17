@@ -1,7 +1,0 @@
-C:\Users\ajnel\Desktop\Download Renamer\Download Renamer.pdb
-C:\Users\ajnel\Desktop\Download Renamer\D3DCompiler_47_cor3.dll
-C:\Users\ajnel\Desktop\Download Renamer\PenImc_cor3.dll
-C:\Users\ajnel\Desktop\Download Renamer\PresentationNative_cor3.dll
-C:\Users\ajnel\Desktop\Download Renamer\vcruntime140_cor3.dll
-C:\Users\ajnel\Desktop\Download Renamer\wpfgfx_cor3.dll
-C:\Users\ajnel\Desktop\Download Renamer\Download Renamer.exe
