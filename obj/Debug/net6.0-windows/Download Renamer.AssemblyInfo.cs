@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Download Renamer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0f43e91da5a3997f345f036da01308099708fd3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19163b1a4e05e15b8bad7a1cfa6b910c514a7ab5")]
 [assembly: System.Reflection.AssemblyProductAttribute("Download Renamer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Download Renamer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
